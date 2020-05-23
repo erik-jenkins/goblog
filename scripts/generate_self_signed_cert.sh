@@ -17,5 +17,6 @@ go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=loca
 # go back to project root
 cd ..
 
-# copy
+# copy to api and ui folders
 cp -r tls api
+cp -r tls ui

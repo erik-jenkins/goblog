@@ -1,0 +1,16 @@
+FROM node:14.3
+
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY package.json ./
+COPY yarn.lock ./
+
+RUN yarn install
+RUN yarn global add react-scripts@3.4.1
+
+COPY . ./
+
+# super dumb workaround to get CRA not to clear the console.
+CMD ["npx", "concurrently", "npm:start"]
