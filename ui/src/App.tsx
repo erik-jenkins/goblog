@@ -1,8 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import config from './config';
+import logo from './logo.svg';
 
 function App() {
+  // proof of concept for talking to the golang api
+  const [apiMessage, setApiMessage] = useState('nothing yet!');
+
+  useEffect(() => {
+    fetch(config.apiRoot)
+      .then((response) => response.text())
+      .then((text) => setApiMessage(text));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,6 +26,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>{apiMessage}</p>
       </header>
     </div>
   );

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set working directory to project root
+# set working directory to common folder
 cd "$(dirname "$0")"/..
 
 # determine how google chrome should be opened (OS-specific)

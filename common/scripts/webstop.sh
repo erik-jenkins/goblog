@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set working directory to project root
+# set working directory to common folder
 cd "$(dirname "$0")"/..
 
 docker-compose -f docker-compose.dev.yml down
